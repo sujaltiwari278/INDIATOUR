@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+  background: #f8fafc;
+  transition: background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================
+   DASHBOARD HEADINGS
+========================= */
+
+.dashboard-heading {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.dark .dashboard-heading {
+  color: #f8fafc;
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.react-calendar {
+  width: 100% !important;
+  max-width: 900px;
+  border: none !important;
+  border-radius: 24px;
+  padding: 20px;
+  font-family: inherit;
+  box-shadow: none;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 20px;
+}
+
+.react-calendar__navigation button {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.react-calendar__tile {
+  height: 80px;
+  position: relative;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.react-calendar__tile:hover {
+  background: #e2e8f0 !important;
+}
+
+.festival-emoji {
+  margin-top: 4px;
+  font-size: 18px;
+}
+
+/* =========================
+   JOURNEY DATES
+========================= */
+
+.journey-start {
+  background: skyblue !important;
+  color: #000000 !important;
+  border-radius: 16px;
+  font-weight: 700;
+  border: 2px solid #facc15;
+}
+
+.journey-end {
+  background: skyblue !important;
+  color: #000000 !important;
+  border-radius: 16px;
+  font-weight: 700;
+  border: 2px solid #facc15;
+}
+
+.journey-range {
+  background: rgba(
+    59,
+    130,
+    246,
+    0.12
+  ) !important;
+  color: inherit !important;
+}
+
+.react-calendar__tile--active {
+  background: transparent !important;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark body {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+.dark nav {
+  background: #111827 !important;
+  border-color: #374151 !important;
+}
+
+.dark .bg-slate-100 {
+  background: #0f172a !important;
+}
+
+.dark .bg-white {
+  background: #1e293b !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #e2e8f0 !important;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #475569 !important;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background: #334155 !important;
+  color: #ffffff !important;
+  border-color: #475569 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #cbd5e1 !important;
+}
+
+.dark button {
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   REVIEW CARDS
+========================= */
+
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow:
+    0 4px 20px
+      rgba(
+        0,
+        0,
+        0,
+        0.35
+      ) !important;
+}
+
+/* =========================
+   SMOOTH TRANSITIONS
+========================= */
+
+* {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.react-calendar__tile:disabled {
+  background: #f1f5f9 !important;
+  color: #cbd5e1 !important;
+  cursor: not-allowed !important;
+}
