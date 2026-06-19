@@ -4,7 +4,6 @@ import './index.css'
 import App from './App.jsx'
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
-import "@fontsource/plus-jakarta-sans";
 import "leaflet/dist/leaflet.css";
 
 createRoot(document.getElementById('root')).render(
