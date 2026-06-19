@@ -7,7 +7,7 @@ import PageHeader from "../components/PageHeader";
 import FestivalCalendar from "../components/FestivalCalendar";
 import FestivalInsights from "../components/FestivalInsights";
 
-import { festivals } from "../data/festivals";
+import festivals from "../data/festivals";
 
 function FestivalExplorer() {
   const [startDate, setStartDate] =
