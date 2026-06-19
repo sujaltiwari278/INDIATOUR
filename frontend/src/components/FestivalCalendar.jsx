@@ -61,37 +61,27 @@ function FestivalCalendar({
   }, [startDate, endDate]);
 
   const getFestivalForDate = (
-    date
-  ) => {
-    const holiday =
-      holidays.find(
-        (holiday) => {
-          const holidayDate =
-            new Date(
-              holiday.date.iso
-            );
+  date
+) => {
+  const year =
+    date.getFullYear();
 
-          return (
-            holidayDate.toDateString() ===
-            date.toDateString()
-          );
-        }
+  return festivals.find(
+    (festival) => {
+      const festivalDate =
+        new Date(
+          year === 2027
+            ? festival.date2027
+            : festival.date2026
+        );
+
+      return (
+        festivalDate.toDateString() ===
+        date.toDateString()
       );
-
-    if (!holiday) return null;
-
-    return festivals.find(
-      (festival) =>
-        festival.holidayApiNames.some(
-          (apiName) =>
-            holiday.name
-              .toLowerCase()
-              .includes(
-                apiName.toLowerCase()
-              )
-        )
-    );
-  };
+    }
+  );
+};
 
   const handleDateClick = (
     date
