@@ -26,29 +26,29 @@ L.Icon.Default.mergeOptions({
 
 
 function FitBounds({
-  selectedCities,
+  routePath,
+  routePositions,
 }) {
   const map = useMap();
 
   useEffect(() => {
-    const bounds =
-      selectedCities
-        .map(
-          (city) =>
-            cityCoordinates[city]
-        )
-        .filter(Boolean);
+    const points =
+      routePath.length > 0
+        ? routePath
+        : routePositions;
 
-    if (bounds.length === 1) {
-      map.setView(bounds[0], 7);
-    } else if (
-      bounds.length > 1
-    ) {
-      map.fitBounds(bounds, {
-        padding: [50, 50],
-      });
+    if (points.length === 0) return;
+
+    if (points.length === 1) {
+      map.setView(points[0], 10);
+      return;
     }
-  }, [map, selectedCities]);
+
+    map.fitBounds(points, {
+      padding: [40, 40],
+      maxZoom: 9,
+    });
+  }, [map, routePath, routePositions]);
 
   return null;
 }
@@ -206,10 +206,9 @@ function CityRouteMap({
           />
 
           <FitBounds
-            selectedCities={
-              selectedCities
-            }
-          />
+  routePath={routePath}
+  routePositions={routePositions}
+/>
 
           {selectedCities.map(
             (city) => {
