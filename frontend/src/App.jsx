@@ -7,7 +7,7 @@ import Itinerary from "./pages/Itinerary";
 import FestivalExplorer from "./pages/FestivalExplorer";
 import Reviews from "./pages/Reviews";
 import SavedTrips from "./pages/SavedTrips";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
