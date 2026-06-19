@@ -1,315 +1,203 @@
-export const festivals = [
-  {
-    name: "Republic Day",
-    holidayApiNames: ["Republic Day"],
-    emoji: "🇮🇳",
-    description:
-      "National holiday celebrating the adoption of the Constitution of India.",
-    bestCities: ["Delhi"],
-    crowdLevel: "High",
-  },
-
-  {
-    name: "Lohri",
-    holidayApiNames: ["Lohri"],
-    emoji: "🔥",
-    description:
-      "Popular harvest festival celebrated mainly in Punjab with bonfires, music, and dance.",
-    bestCities: [
-      "Amritsar",
-      "Ludhiana",
-      "Chandigarh",
-    ],
-    crowdLevel: "Medium",
-  },
-
+const festivals = [
   {
     name: "Makar Sankranti",
-    holidayApiNames: ["Makar Sankranti"],
+    date2026: "2026-01-14",
+    date2027: "2027-01-14",
     emoji: "🪁",
-    description:
-      "Harvest festival famous for kite-flying celebrations across India.",
-    bestCities: [
-      "Ahmedabad",
-      "Jaipur",
-      "Varanasi",
-    ],
-    crowdLevel: "High",
+    crowdLevel: "Medium",
+    bestCities: ["Ahmedabad", "Jaipur", "Varanasi"],
+    description: "Traditional harvest festival celebrated across India."
   },
 
   {
     name: "Pongal",
-    holidayApiNames: ["Pongal"],
+    date2026: "2026-01-15",
+    date2027: "2027-01-15",
     emoji: "🌾",
-    description:
-      "Major harvest festival celebrated in Tamil Nadu.",
-    bestCities: [
-      "Chennai",
-      "Madurai",
-      "Coimbatore",
-    ],
-    crowdLevel: "Medium",
+    crowdLevel: "High",
+    bestCities: ["Chennai", "Madurai", "Coimbatore"],
+    description: "Tamil Nadu's famous harvest festival."
   },
 
   {
-    name: "Mahashivratri",
-    holidayApiNames: [
-      "Maha Shivaratri",
-      "Mahashivratri",
-    ],
-    emoji: "🌙",
-    description:
-      "Important Hindu festival dedicated to Lord Shiva.",
-    bestCities: [
-      "Varanasi",
-      "Ujjain",
-      "Haridwar",
-    ],
+    name: "Maha Shivratri",
+    date2026: "2026-02-15",
+    date2027: "2027-03-06",
+    emoji: "🔱",
     crowdLevel: "High",
+    bestCities: ["Varanasi", "Ujjain", "Haridwar"],
+    description: "Dedicated to Lord Shiva."
   },
 
   {
     name: "Holi",
-    holidayApiNames: ["Holi"],
+    date2026: "2026-03-04",
+    date2027: "2027-03-22",
     emoji: "🎨",
-    description:
-      "Festival of Colors celebrated with music, dance, and vibrant colors.",
-    bestCities: [
-      "Mathura",
-      "Vrindavan",
-      "Jaipur",
-    ],
     crowdLevel: "Very High",
+    bestCities: ["Mathura", "Vrindavan", "Delhi"],
+    description: "India's famous festival of colors."
   },
 
   {
-    name: "Eid-ul-Fitr",
-    holidayApiNames: [
-      "Eid al-Fitr",
-      "Eid ul-Fitr",
-      "Eid-ul-Fitr",
-    ],
-    emoji: "☪️",
-    description:
-      "Marks the end of Ramadan and is celebrated with prayers and feasts.",
-    bestCities: [
-      "Delhi",
-      "Lucknow",
-      "Hyderabad",
-    ],
+    name: "Eid al-Fitr",
+    date2026: "2026-03-20",
+    date2027: "2027-03-10",
+    emoji: "🌙",
     crowdLevel: "High",
+    bestCities: ["Delhi", "Lucknow", "Hyderabad"],
+    description: "Celebration marking the end of Ramadan."
   },
 
   {
     name: "Ram Navami",
-    holidayApiNames: [
-      "Rama Navami",
-      "Ram Navami",
-    ],
+    date2026: "2026-03-27",
+    date2027: "2027-04-15",
     emoji: "🏹",
-    description:
-      "Celebrates the birth of Lord Rama.",
-    bestCities: [
-      "Ayodhya",
-      "Varanasi",
-    ],
-    crowdLevel: "High",
+    crowdLevel: "Medium",
+    bestCities: ["Ayodhya", "Varanasi"],
+    description: "Birth anniversary of Lord Rama."
   },
 
   {
-    name: "Onam",
-    holidayApiNames: ["Onam"],
-    emoji: "🌸",
-    description:
-      "Kerala's grand harvest festival known for boat races and cultural events.",
-    bestCities: [
-      "Kochi",
-      "Alleppey",
-      "Thiruvananthapuram",
-    ],
+    name: "Baisakhi",
+    date2026: "2026-04-13",
+    date2027: "2027-04-14",
+    emoji: "🌾",
     crowdLevel: "High",
+    bestCities: ["Amritsar", "Chandigarh"],
+    description: "Harvest festival and Sikh New Year."
   },
 
   {
-    name: "Independence Day",
-    holidayApiNames: [
-      "Independence Day",
-    ],
-    emoji: "🇮🇳",
-    description:
-      "Celebrates India's independence from British rule.",
-    bestCities: [
-      "Delhi",
-      "Mumbai",
-      "Bengaluru",
-    ],
-    crowdLevel: "High",
+    name: "Buddha Purnima",
+    date2026: "2026-05-01",
+    date2027: "2027-05-21",
+    emoji: "☸️",
+    crowdLevel: "Medium",
+    bestCities: ["Bodh Gaya", "Sarnath"],
+    description: "Celebrates the birth of Gautama Buddha."
+  },
+
+  {
+    name: "Rath Yatra",
+    date2026: "2026-06-19",
+    date2027: "2027-07-09",
+    emoji: "🚩",
+    crowdLevel: "Very High",
+    bestCities: ["Puri"],
+    description: "World-famous chariot procession festival."
   },
 
   {
     name: "Raksha Bandhan",
-    holidayApiNames: [
-      "Raksha Bandhan",
-      "Raksha Bandhan (Rakhi)",
-    ],
-    emoji: "📿",
-    description:
-      "Festival celebrating the bond between brothers and sisters.",
-    bestCities: [
-      "Delhi",
-      "Jaipur",
-      "Lucknow",
-    ],
+    date2026: "2026-08-28",
+    date2027: "2027-08-17",
+    emoji: "🎁",
     crowdLevel: "Medium",
+    bestCities: ["Delhi", "Lucknow", "Jaipur"],
+    description: "Celebrates sibling relationships."
   },
 
   {
     name: "Janmashtami",
-    holidayApiNames: [
-      "Krishna Janmashtami",
-      "Janmashtami",
-    ],
+    date2026: "2026-09-03",
+    date2027: "2027-08-27",
     emoji: "🦚",
-    description:
-      "Celebrates the birth of Lord Krishna.",
-    bestCities: [
-      "Mathura",
-      "Vrindavan",
-    ],
     crowdLevel: "High",
+    bestCities: ["Mathura", "Vrindavan"],
+    description: "Birth anniversary of Lord Krishna."
   },
 
   {
     name: "Ganesh Chaturthi",
-    holidayApiNames: [
-      "Ganesh Chaturthi",
-      "Ganesh Chaturthi/Vinayaka Chaturthi",
-      "Vinayaka Chaturthi",
-    ],
+    date2026: "2026-09-15",
+    date2027: "2027-09-05",
     emoji: "🐘",
-    description:
-      "Festival celebrating Lord Ganesha with grand processions and decorations.",
-    bestCities: [
-      "Mumbai",
-      "Pune",
-    ],
     crowdLevel: "Very High",
+    bestCities: ["Mumbai", "Pune"],
+    description: "Celebration of Lord Ganesha."
   },
 
   {
-    name: "Gandhi Jayanti",
-    holidayApiNames: [
-      "Gandhi Jayanti",
-    ],
-    emoji: "🇮🇳",
-    description:
-      "Birth anniversary of Mahatma Gandhi.",
-    bestCities: [
-      "Delhi",
-      "Ahmedabad",
-    ],
-    crowdLevel: "Medium",
+    name: "Onam",
+    date2026: "2026-08-26",
+    date2027: "2027-09-14",
+    emoji: "🌺",
+    crowdLevel: "High",
+    bestCities: ["Kochi", "Thiruvananthapuram"],
+    description: "Kerala's grand harvest festival."
   },
 
   {
     name: "Navratri",
-    holidayApiNames: [
-      "Navratri",
-      "Sharad Navratri",
-    ],
-    emoji: "🎉",
-    description:
-      "Nine-night festival dedicated to Goddess Durga.",
-    bestCities: [
-      "Ahmedabad",
-      "Vadodara",
-    ],
+    date2026: "2026-10-12",
+    date2027: "2027-10-01",
+    emoji: "💃",
     crowdLevel: "Very High",
+    bestCities: ["Ahmedabad", "Vadodara"],
+    description: "Nine nights of dance and devotion."
+  },
+
+  {
+    name: "Durga Puja",
+    date2026: "2026-10-18",
+    date2027: "2027-10-08",
+    emoji: "🪔",
+    crowdLevel: "Very High",
+    bestCities: ["Kolkata"],
+    description: "West Bengal's largest cultural festival."
   },
 
   {
     name: "Dussehra",
-    holidayApiNames: [
-      "Dussehra",
-      "Vijayadashami",
-    ],
+    date2026: "2026-10-21",
+    date2027: "2027-10-10",
     emoji: "🏹",
-    description:
-      "Celebrates the victory of good over evil.",
-    bestCities: [
-      "Mysuru",
-      "Kullu",
-      "Varanasi",
-    ],
     crowdLevel: "High",
+    bestCities: ["Mysuru", "Delhi"],
+    description: "Victory of good over evil."
   },
 
   {
     name: "Diwali",
-    holidayApiNames: [
-      "Diwali",
-      "Deepavali",
-    ],
+    date2026: "2026-11-08",
+    date2027: "2027-10-29",
     emoji: "🪔",
-    description:
-      "Festival of Lights celebrated across India.",
-    bestCities: [
-      "Jaipur",
-      "Delhi",
-      "Varanasi",
-      "Amritsar",
-    ],
     crowdLevel: "Very High",
-  },
-
-  {
-    name: "Eid-ul-Adha",
-    holidayApiNames: [
-      "Eid al-Adha",
-      "Eid ul-Adha",
-      "Bakrid",
-    ],
-    emoji: "☪️",
-    description:
-      "Festival of Sacrifice celebrated by Muslims worldwide.",
-    bestCities: [
-      "Delhi",
-      "Hyderabad",
-      "Lucknow",
-    ],
-    crowdLevel: "High",
+    bestCities: ["Delhi", "Jaipur", "Varanasi"],
+    description: "Festival of Lights celebrated across India."
   },
 
   {
     name: "Guru Nanak Jayanti",
-    holidayApiNames: [
-      "Guru Nanak Jayanti",
-      "Guru Nanak's Birthday",
-    ],
+    date2026: "2026-11-24",
+    date2027: "2027-11-13",
     emoji: "🙏",
-    description:
-      "Birth anniversary of Guru Nanak Dev Ji.",
-    bestCities: [
-      "Amritsar",
-      "Anandpur Sahib",
-    ],
     crowdLevel: "High",
+    bestCities: ["Amritsar"],
+    description: "Birth anniversary of Guru Nanak."
   },
 
   {
     name: "Christmas",
-    holidayApiNames: [
-      "Christmas Day",
-      "Christmas",
-    ],
+    date2026: "2026-12-25",
+    date2027: "2027-12-25",
     emoji: "🎄",
-    description:
-      "Celebration of the birth of Jesus Christ.",
-    bestCities: [
-      "Goa",
-      "Kochi",
-      "Mumbai",
-    ],
-    crowdLevel: "High",
+    crowdLevel: "Medium",
+    bestCities: ["Goa", "Mumbai", "Bengaluru"],
+    description: "Christmas celebrations and tourism season."
   },
+
+  {
+    name: "Hornbill Festival",
+    date2026: "2026-12-01",
+    date2027: "2027-12-01",
+    emoji: "🦅",
+    crowdLevel: "Medium",
+    bestCities: ["Kohima"],
+    description: "Nagaland's famous cultural festival."
+  }
 ];
+
+export default festivals;
