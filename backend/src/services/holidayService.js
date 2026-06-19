@@ -16,12 +16,16 @@ const getIndianHolidays = async (year) => {
 
     return response.data.response.holidays;
   } catch (error) {
-    console.log(error);
+  console.log(
+    error.response?.data ||
+    error.message
+  );
 
-    throw new Error(
-      "Failed to fetch holidays"
-    );
-  }
+  throw new Error(
+    error.response?.data?.meta?.error_detail ||
+    error.message
+  );
+}
 };
 
 module.exports = {
