@@ -22,10 +22,39 @@ const {
 router.post(
   "/create",
   protect,
-  upload.array(
-    "images",
-    5
-  ),
+  (req, res, next) => {
+    upload.array("images", 5)(
+      req,
+      res,
+      (err) => {
+        if (err) {
+          console.error(
+            "MULTER ERROR FULL:",
+            err
+          );
+
+          console.error(
+            "MULTER MESSAGE:",
+            err?.message
+          );
+
+          console.error(
+            "MULTER STACK:",
+            err?.stack
+          );
+
+          return res.status(500).json({
+            success: false,
+            message:
+              err?.message ||
+              "Upload failed",
+          });
+        }
+
+        next();
+      }
+    );
+  },
   createReview
 );
 
