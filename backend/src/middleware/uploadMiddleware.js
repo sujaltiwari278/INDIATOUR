@@ -16,17 +16,10 @@ const storage =
   new CloudinaryStorage({
     cloudinary,
 
-    params: {
-      folder:
-        "indiatour-reviews",
-
-      allowed_formats: [
-        "jpg",
-        "jpeg",
-        "png",
-        "webp",
-      ],
-    },
+    params: async (req, file) => ({
+  folder: "indiatour-reviews",
+  resource_type: "image",
+}),
   });
 
 const upload =
