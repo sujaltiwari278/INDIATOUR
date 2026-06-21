@@ -30,12 +30,28 @@ const createReview = async (
       review,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message:
-        error.message,
-    });
-  }
+
+  console.log(
+    "REVIEW ERROR:",
+    error
+  );
+
+  console.log(
+    "REVIEW ERROR JSON:",
+    JSON.stringify(
+      error,
+      null,
+      2
+    )
+  );
+
+  res.status(500).json({
+    success: false,
+    message:
+      error.message ||
+      "Review creation failed",
+  });
+}
 };
 
 const getReviewsByPlace =
