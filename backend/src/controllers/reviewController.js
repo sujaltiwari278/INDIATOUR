@@ -12,10 +12,9 @@ const createReview = async (
     } = req.body;
 
     const images =
-      req.files?.map(
-        (file) =>
-          `/uploads/reviews/${file.filename}`
-      ) || [];
+  req.files?.map(
+    (file) => file.path
+  ) || [];
 
     const review =
       await Review.create({

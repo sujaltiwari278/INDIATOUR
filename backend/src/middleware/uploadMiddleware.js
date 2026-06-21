@@ -1,53 +1,31 @@
 const multer =
   require("multer");
 
-const fs =
-  require("fs");
+const {
+  CloudinaryStorage,
+} = require(
+  "multer-storage-cloudinary"
+);
 
-const path =
-  require("path");
-
-const uploadDir =
-  path.join(
-    __dirname,
-    "../../uploads/reviews"
+const cloudinary =
+  require(
+    "../config/cloudinary"
   );
-
-if (
-  !fs.existsSync(uploadDir)
-) {
-  fs.mkdirSync(
-    uploadDir,
-    {
-      recursive: true,
-    }
-  );
-}
 
 const storage =
-  multer.diskStorage({
-    destination: (
-      req,
-      file,
-      cb
-    ) => {
-      cb(
-        null,
-        uploadDir
-      );
-    },
+  new CloudinaryStorage({
+    cloudinary,
 
-    filename: (
-      req,
-      file,
-      cb
-    ) => {
-      cb(
-        null,
-        Date.now() +
-          "-" +
-          file.originalname
-      );
+    params: {
+      folder:
+        "indiatour-reviews",
+
+      allowed_formats: [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+      ],
     },
   });
 
