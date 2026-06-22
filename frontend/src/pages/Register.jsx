@@ -15,14 +15,17 @@ function Register() {
     useNavigate();
 
   const [formData, setFormData] =
-    useState({
-      name: "",
-      email: "",
-      password: "",
-      age: "",
-      nationality: "",
-      interests: "",
-    });
+  useState({
+    name: "",
+    email: "",
+    password: "",
+    age: "",
+    nationality: "",
+    interests: "",
+  });
+
+const [loading, setLoading] =
+  useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -33,35 +36,38 @@ function Register() {
   };
 
   const handleSubmit =
-    async (e) => {
-      e.preventDefault();
+  async (e) => {
+    e.preventDefault();
 
-      try {
-        await registerUser({
-          ...formData,
+    if (loading) return;
 
-          interests:
-            formData.interests
-              .split(",")
-              .map(
-                (item) =>
-                  item.trim()
-              ),
-        });
+    try {
+      setLoading(true);
 
-        toast.success(
-          "Registration Successful"
-        );
+      await registerUser(
+  formData
+);
 
-        navigate("/");
-      } catch (error) {
-        toast.error(
-          error.response?.data
-            ?.message ||
-            "Registration Failed"
-        );
-      }
-    };
+      toast.success(
+        "Registration Successful"
+      );
+
+      navigate("/");
+
+    } catch (error) {
+
+      toast.error(
+        error.response?.data
+          ?.message ||
+          "Registration Failed"
+      );
+
+    } finally {
+
+      setLoading(false);
+
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-400 via-orange-300 to-blue-700 flex items-center justify-center p-6 relative overflow-hidden">
@@ -165,24 +171,20 @@ function Register() {
 
           </div>
 
-          <input
-            name="interests"
-            placeholder="Nature, Adventure, History"
-            value={
-              formData.interests
-            }
-            onChange={
-              handleChange
-            }
-            className="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-orange-300"
-          />
-
           <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-orange-500 to-blue-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:scale-[1.02] transition"
-          >
-            Create Account
-          </button>
+  type="submit"
+  disabled={loading}
+  className={`w-full text-white py-4 rounded-xl font-semibold shadow-lg transition
+  ${
+    loading
+      ? "bg-slate-400 cursor-not-allowed"
+      : "bg-gradient-to-r from-orange-500 to-blue-600 hover:scale-[1.02]"
+  }`}
+>
+  {loading
+    ? "Creating Account..."
+    : "Create Account"}
+</button>
 
         </form>
 

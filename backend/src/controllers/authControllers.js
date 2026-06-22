@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password, age, nationality, interests } = req.body;
+    const { name, email, password, age, nationality } = req.body;
 
     const existingUser = await User.findOne({ email });
 
@@ -22,7 +22,6 @@ const registerUser = async (req, res) => {
       password: hashedPassword,
       age,
       nationality,
-      interests,
     });
 
     res.status(201).json({

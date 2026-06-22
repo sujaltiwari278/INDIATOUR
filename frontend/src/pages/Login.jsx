@@ -7,10 +7,13 @@ function Login() {
   const navigate = useNavigate();
 
   const [formData, setFormData] =
-    useState({
-      email: "",
-      password: "",
-    });
+  useState({
+    email: "",
+    password: "",
+  });
+
+const [loading, setLoading] =
+  useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,53 +23,62 @@ function Login() {
     });
   };
 
-  const handleSubmit =
-    async (e) => {
-      e.preventDefault();
+const handleSubmit =
+  async (e) => {
+    e.preventDefault();
 
-      try {
-        const data =
-          await loginUser(
-            formData
-          );
+    if (loading) return;
 
-          localStorage.removeItem(
-  "indiaTourTrip"
-);
+    try {
+      setLoading(true);
 
-localStorage.removeItem(
-  "indiaTourTripDates"
-);
-
-        localStorage.setItem(
-  "token",
-  data.token
-);
-
-localStorage.setItem(
-  "user",
-  JSON.stringify(
-    data.user
-  )
-);
-
-        
-
-        toast.success(
-          "Welcome Back!"
+      const data =
+        await loginUser(
+          formData
         );
 
-        navigate(
-          "/dashboard"
-        );
-      } catch (error) {
-        toast.error(
-          error.response?.data
-            ?.message ||
-            "Login Failed"
-        );
-      }
-    };
+      localStorage.removeItem(
+        "indiaTourTrip"
+      );
+
+      localStorage.removeItem(
+        "indiaTourTripDates"
+      );
+
+      localStorage.setItem(
+        "token",
+        data.token
+      );
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify(
+          data.user
+        )
+      );
+
+      toast.success(
+        "Welcome Back!"
+      );
+
+      navigate(
+        "/dashboard"
+      );
+
+    } catch (error) {
+
+      toast.error(
+        error.response?.data
+          ?.message ||
+          "Login Failed"
+      );
+
+    } finally {
+
+      setLoading(false);
+
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-400 via-orange-300 to-blue-700 flex items-center justify-center p-6 relative overflow-hidden">
@@ -135,11 +147,19 @@ localStorage.setItem(
           />
 
           <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-orange-500 to-blue-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:scale-[1.02] transition"
-          >
-            Login
-          </button>
+  type="submit"
+  disabled={loading}
+  className={`w-full text-white py-4 rounded-xl font-semibold shadow-lg transition
+  ${
+    loading
+      ? "bg-slate-400 cursor-not-allowed"
+      : "bg-gradient-to-r from-orange-500 to-blue-600 hover:scale-[1.02]"
+  }`}
+>
+  {loading
+    ? "Signing In..."
+    : "Login"}
+</button>
 
         </form>
 

@@ -25,11 +25,6 @@ const userSchema = new mongoose.Schema(
     nationality: {
       type: String,
     },
-
-    interests: {
-      type: [String],
-      default: [],
-    },
   },
   {
     timestamps: true,
