@@ -543,13 +543,13 @@ const [openMenu, setOpenMenu] =
                             index
                           ) => (
                             <a
-  href={`http://localhost:5000${image}`}
+  href={image}
   target="_blank"
   rel="noreferrer"
 >
   <img
     key={index}
-    src={`http://localhost:5000${image}`}
+    src={image}
     alt="review"
     className="h-28 w-full object-cover rounded-xl cursor-pointer hover:scale-105 transition"
   />
