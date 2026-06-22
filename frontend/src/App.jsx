@@ -9,6 +9,7 @@ import Reviews from "./pages/Reviews";
 import SavedTrips from "./pages/SavedTrips";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
+import TripDetails from "./pages/Tripview";
 
 function App() {
   return (
@@ -68,6 +69,15 @@ function App() {
           </ProtectedRoute>
         }
       />
+
+      <Route
+  path="/trips/:id"
+  element={
+    <ProtectedRoute>
+      <TripDetails />
+    </ProtectedRoute>
+  }
+/>
 
       <Route
   path="*"
