@@ -138,11 +138,6 @@ function JourneyExplorer() {
 
         <div className="max-w-[1600px] mx-auto px-8 py-10">
 
-          <PageHeader
-            title="Journey Explorer"
-            subtitle="Complete overview of your trip."
-          />
-
           <div className="bg-gradient-to-r from-orange-500 via-orange-400 to-blue-700 text-white rounded-[32px] p-10 shadow-2xl mb-8">
 
             <h1 className="text-5xl font-black mb-4">
